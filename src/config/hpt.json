@@ -1,0 +1,64 @@
+{
+    "num_trials": 50,
+    "hyperparameters": [
+      {
+        "name": "criterion",
+        "short_desc": "The function used to measure the quality of a split.",
+        "type": "categorical",
+        "categories": ["gini", "entropy"]
+      },
+      {
+        "name": "splitter",
+        "short_desc": "The strategy used to choose the split at each node.",
+        "type": "categorical",
+        "categories": ["best", "random"]
+      },
+      {
+        "name": "max_features",
+        "short_desc": "The number of features to consider when looking for the best split.",
+        "type": "categorical",
+        "categories": ["sqrt", "log2", null]
+      },
+      {
+        "name": "max_depth",
+        "short_desc": "The maximum depth of the tree.",
+        "type": "int",
+        "search_type": "uniform",
+        "range_low": 1,
+        "range_high": 30
+      },
+      {
+        "name": "min_samples_split",
+        "short_desc": "The minimum number of samples required to split an internal node.",
+        "type": "int",
+        "search_type": "uniform",
+        "range_low": 2,
+        "range_high": 30
+      },
+      {
+        "name": "min_samples_leaf",
+        "short_desc": "The minimum number of samples required to be at a leaf node.",
+        "type": "int",
+        "search_type": "uniform",
+        "range_low": 1,
+        "range_high": 20
+      },
+
+      {
+        "name": "max_leaf_nodes",
+        "short_desc": "The maximum number of leaf nodes.",
+        "type": "int",
+        "search_type": "uniform",
+        "range_low": 2,
+        "range_high": 100
+      },
+      {
+        "name": "min_impurity_decrease",
+        "short_desc": "A node will be split if this split induces a decrease of the impurity greater than or equal to this value.",
+        "type": "real",
+        "search_type": "uniform",
+        "range_low": 0.0,
+        "range_high": 0.5
+      }
+    ]
+  }
