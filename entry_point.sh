@@ -12,7 +12,7 @@ echo "Running $command"
 case $command in
   # If the command is "train", run the train.py script with all remaining arguments
   train)
-    python /opt/src/train.py -t"$@"
+    python /opt/src/train.py "$@"
     ;;
 
   # If the command is "predict", run the predict.py script with all remaining arguments
