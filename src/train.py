@@ -30,9 +30,9 @@ def run_training(
     default_hyperparameters_file_path: str = paths.DEFAULT_HYPERPARAMETERS_FILE_PATH,
     run_tuning: bool = False,
     hpt_specs_file_path: str = paths.HPT_CONFIG_FILE_PATH,
-    hpt_results_file_path: str = paths.HPT_RESULTS_FILE_PATH,
+    hpt_results_file_path: str = paths.HPT_OUTPUTS_DIR,
     explainer_config_file_path: str = paths.EXPLAINER_CONFIG_FILE_PATH,
-    explainer_file_path: str = paths.EXPLAINER_FILE_PATH,
+    explainer_file_path: str = paths.EXPLAINER_DIR_PATH,
 ) -> None:
     """
     Run the training process and saves model artifacts
@@ -156,4 +156,4 @@ def parse_arguments() -> argparse.Namespace:
 
 if __name__ == "__main__":
     args = parse_arguments()
-    run_training(run_tuning=False)
+    run_training(run_tuning=args.tune)

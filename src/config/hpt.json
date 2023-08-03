@@ -1,5 +1,5 @@
 {
-    "num_trials": 50,
+    "num_trials": 100,
     "hyperparameters": [
       {
         "name": "criterion",

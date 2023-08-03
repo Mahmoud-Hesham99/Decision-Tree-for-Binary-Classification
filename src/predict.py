@@ -55,7 +55,7 @@ def create_predictions_dataframe(
 
 
 def run_batch_predictions(
-    saved_schema_path: str = paths.SAVED_SCHEMA_PATH,
+    saved_schema_path: str = paths.SAVED_SCHEMA_DIR_PATH,
     model_config_file_path: str = paths.MODEL_CONFIG_FILE_PATH,
     test_dir: str = paths.TEST_DIR,
     pipeline_file_path: str = paths.PIPELINE_FILE_PATH,

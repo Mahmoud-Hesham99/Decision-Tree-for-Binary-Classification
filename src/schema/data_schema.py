@@ -28,10 +28,10 @@ class BinaryClassificationSchema:
         """
         self.schema = schema_dict
         self._numeric_features, self._categorical_features = self._get_features()
-        # (
-        #     self.nullable_features,
-        #     self.non_nullable_features,
-        # ) = self._get_nullable_and_non_nullable_features()
+        (
+            self.nullable_features,
+            self.non_nullable_features,
+        ) = self._get_nullable_and_non_nullable_features()
 
     @property
     def model_category(self) -> str:

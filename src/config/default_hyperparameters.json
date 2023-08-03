@@ -1,11 +1,11 @@
 {
   "criterion": "gini",
   "splitter": "best",
-  "max_depth": null,
+  "max_depth": 15,
   "min_samples_split": 2,
   "min_samples_leaf": 1,
   "max_features": null,
-  "max_leaf_nodes": null,
+  "max_leaf_nodes": 50,
   "min_impurity_decrease": 0.0,
   "class_weight": null,
   "random_state": 42

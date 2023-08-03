@@ -1,10 +1,14 @@
 import os
 
-# Path to the root directory
+# Path to the root directory which contains the src directory
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-# Path to the mounted volume
-MODEL_INPUTS_OUTPUTS = os.path.join(ROOT_DIR, "model_inputs_outputs")
+# Path into the mounted volume:
+#   set to environment variable MODEL_INPUTS_OUTPUTS_PATH if it exists
+#   else: set to default path which would be <path_to_root>/model_inputs_outputs/
+MODEL_INPUTS_OUTPUTS = os.environ.get(
+    "BIND_MOUNT_PATH", os.path.join(ROOT_DIR, "model_inputs_outputs/")
+)
 
 # Path to inputs
 INPUT_DIR = os.path.join(MODEL_INPUTS_OUTPUTS, "inputs")
@@ -22,15 +26,22 @@ MODEL_PATH = os.path.join(MODEL_INPUTS_OUTPUTS, "model")
 # Path to artifacts directory inside model directory
 MODEL_ARTIFACTS_PATH = os.path.join(MODEL_PATH, "artifacts")
 # Path to saved schema in artifacts directory
+SAVED_SCHEMA_DIR_PATH = os.path.join(MODEL_ARTIFACTS_PATH, "schema.joblib")
 SAVED_SCHEMA_PATH = os.path.join(MODEL_ARTIFACTS_PATH, "schema.joblib")
 # Name of the preprocessing pipeline file
+PREPROCESSING_DIR_PATH = os.path.join(MODEL_ARTIFACTS_PATH, "preprocessing")
+# Name of the pipeline file inside artifacts directory
 PIPELINE_FILE_PATH = os.path.join(MODEL_ARTIFACTS_PATH, "pipeline.joblib")
-# Name of the target encoder file
+PIPELINE_DIR_PATH = os.path.join(MODEL_ARTIFACTS_PATH, "pipeline.joblib")
+
+# Name of the target encoder file inside artifacts directory
 TARGET_ENCODER_FILE_PATH = os.path.join(MODEL_ARTIFACTS_PATH, "target_encoder.joblib")
+
 # Name of the predictor model file inside artifacts directory
 PREDICTOR_FILE_PATH = os.path.join(MODEL_ARTIFACTS_PATH, "predictor.joblib")
+PREDICTOR_DIR_PATH = os.path.join(MODEL_ARTIFACTS_PATH, "predictor.joblib")
 # Name of the explainer file inside artifacts directory
-EXPLAINER_FILE_PATH = os.path.join(MODEL_ARTIFACTS_PATH, "explainer.joblib")
+EXPLAINER_DIR_PATH = os.path.join(MODEL_ARTIFACTS_PATH, "explainer.joblib")
 
 # Path to outputs
 OUTPUT_DIR = os.path.join(MODEL_INPUTS_OUTPUTS, "outputs")
@@ -39,9 +50,7 @@ PREDICTIONS_DIR = os.path.join(OUTPUT_DIR, "predictions")
 # Name of the file containing the predictions
 PREDICTIONS_FILE_PATH = os.path.join(PREDICTIONS_DIR, "predictions.csv")
 # Path to HPT results directory inside outputs directory
-HPT_OUTPUTS_DIR = os.path.join(OUTPUT_DIR, "hpt_outputs")
-# Name of the hyperparameters results file
-HPT_RESULTS_FILE_PATH = os.path.join(HPT_OUTPUTS_DIR, "HPT_results.csv")
+HPT_OUTPUTS_DIR = os.path.join(OUTPUT_DIR, "hpt_outputs/HPT_results.csv")
 
 # Path to logs directory inside outputs directory
 ERRORS_DIR = os.path.join(OUTPUT_DIR, "errors")
