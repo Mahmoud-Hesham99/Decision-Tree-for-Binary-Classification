@@ -1,4 +1,4 @@
-# Machine Learning for Binary Classification Models
+# Decision Tree for Binary Classification
  Machine Learning for Binary Classification Models - Ready Tensor
 
 
