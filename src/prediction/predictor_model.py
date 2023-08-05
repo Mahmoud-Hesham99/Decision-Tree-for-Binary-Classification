@@ -31,7 +31,6 @@ class Classifier:
         min_impurity_decrease: Optional[float] = 0.0,
         class_weight: Optional[Union[dict, str]] = None,
         random_state: Optional[int] = 42,
-        presort: Optional[bool] = False,
         **kwargs,
     ):
         """Construct a new Decision Tree binary classifier.
@@ -67,8 +66,7 @@ class Classifier:
                 or None for equal weights. Defaults to None.
             random_state (int, optional): The seed used by the random number generator.
                 Defaults to None.
-            presort (bool, optional): Whether to presort the data to speed up the finding of best splits during training.
-                Defaults to False.
+
         """
         self.criterion = criterion
         self.splitter = splitter
